@@ -19,5 +19,5 @@ RUN sudo apt-get -y update && \
 sudo echo '<tomcat-users>' > /etc/tomcat7/tomcat-users.xml &&\
 sudo echo '  <role rolename="manager-gui"/>' >> /etc/tomcat7/tomcat-users.xml && \
 sudo echo '  <user username="admin" password="mysecretpassword" roles="manager-gui"/>' >> /etc/tomcat7/tomcat-users.xml && \
-sudo echo '</tomcat-users>' >> /etc/tomcat7/tomcat-users.xml &&\
+sudo echo '</tomcat-users>' >> /etc/tomcat7/tomcat-users.xml && \
 sudo chown -R tomcat7 /usr/share/solr/example/multicore
