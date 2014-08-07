@@ -1,9 +1,6 @@
 FROM dockerimages/ubuntu-vm:14.04
 RUN sudo apt-get -y update && \
     sudo apt-get -y install software-properties-common python-software-properties && \
-    sudo add-apt-repository ppa:webupd8team/java && \
-    sudo apt-get -y update && \
-    sudo apt-get -y install curl oracle-java7-installer && \
     sudo apt-get -y install tomcat7 tomcat7-admin && \
     curl http://www.eu.apache.org/dist/lucene/solr/4.9.0/solr-4.9.0.tgz > solr-4.9.0.tgz && \
     tar xzvf solr-4.7.0.tgz && \
