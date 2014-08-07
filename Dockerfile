@@ -1,7 +1,6 @@
 FROM dockerimages/ubuntu-vm:14.04
 RUN sudo apt-get -y update && \
-    sudo apt-get -y install software-properties-common python-software-properties && \
-    sudo apt-get -y install tomcat7 tomcat7-admin && \
+    sudo apt-get -y install software-properties-common python-software-properties tomcat7 tomcat7-admin && \
     apt-get -y clean
 RUN sudo echo '<tomcat-users>' > /etc/tomcat7/tomcat-users.xml &&\
     sudo echo '  <role rolename="manager-gui"/>' >> /etc/tomcat7/tomcat-users.xml && \
