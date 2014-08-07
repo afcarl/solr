@@ -1,6 +1,5 @@
 FROM dockerimages/ubuntu-vm:14.04
-RUN sudo apt-get -y purge oracle-java6-installer && \
-    sudo apt-get -y update && \
+RUN sudo apt-get -y update && \
     sudo apt-get -y install software-properties-common python-software-properties && \
     sudo add-apt-repository ppa:webupd8team/java && \
     sudo apt-get -y update && \
