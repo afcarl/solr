@@ -4,6 +4,8 @@ RUN sudo apt-get -y update && \
     sudo apt-get -y install tomcat7 tomcat7-admin && \
     curl http://www.eu.apache.org/dist/lucene/solr/4.9.0/solr-4.9.0.tgz > solr-4.9.0.tgz && \
     tar xzvf solr-4.9.0.tgz && \
+    rm -rf solr-4.9.0.tgz && \
+    apt-get -y clean && \
     sudo mv solr-4.9.0 /usr/share/solr && \
     cd /usr/share/solr/example && \
     sudo cp /usr/share/solr/example/webapps/solr.war /usr/share/solr/example/multicore/solr.war && \
