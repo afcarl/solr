@@ -8,10 +8,10 @@ RUN sudo echo '<tomcat-users>' > /etc/tomcat7/tomcat-users.xml &&\
     sudo echo '</tomcat-users>' >> /etc/tomcat7/tomcat-users.xml
 RUN curl http://www.eu.apache.org/dist/lucene/solr/4.9.0/solr-4.9.0.tgz > solr-4.9.0.tgz
 RUN tar xzvf solr-4.9.0.tgz
-RUN sudo mv solr-4.9.0 /usr/share/solr && \
-    sudo cp /usr/share/solr/example/webapps/solr.war /usr/share/solr/example/multicore/solr.war && \
-    rm -rf solr-4.9.0.tgz && \
-    sudo cp -r /usr/share/solr/example/lib/ext/* /usr/share/tomcat7/lib/ && \
+RUN sudo mv solr-4.9.0 /usr/share/solr
+RUN sudo cp /usr/share/solr/example/webapps/solr.war /usr/share/solr/example/multicore/solr.war
+RUN rm -rf solr-4.9.0.tgz 
+RUN sudo cp -r /usr/share/solr/example/lib/ext/* /usr/share/tomcat7/lib/ && \
     sudo cp -r /usr/share/solr/example/resources/log4j.properties /usr/share/tomcat7/lib/ && \
     sudo echo '<Context docBase="/usr/share/solr/example/multicore/solr.war" debug="0" crossContext="true">' > /etc/tomcat7/Catalina/localhost/solr.xml && \
     sudo echo '  <Environment name="solr/home" type="java.lang.String" value="/usr/share/solr/example/multicore" override="true" />' >> /etc/tomcat7/Catalina/localhost/solr.xml && \
