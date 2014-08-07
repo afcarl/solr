@@ -16,5 +16,5 @@ RUN sudo cp -r /usr/share/solr/example/lib/ext/* /usr/share/tomcat7/lib/ && \
     sudo echo '<Context docBase="/usr/share/solr/example/multicore/solr.war" debug="0" crossContext="true">' > /etc/tomcat7/Catalina/localhost/solr.xml && \
     sudo echo '  <Environment name="solr/home" type="java.lang.String" value="/usr/share/solr/example/multicore" override="true" />' >> /etc/tomcat7/Catalina/localhost/solr.xml && \
     sudo echo '</Context>' >> /etc/tomcat7/Catalina/localhost/solr.xml &&\
-    sudo nano echo ' solr.log=/usr/share/solr' >> /usr/share/tomcat7/lib/log4j.properties &&\
+    sudo echo ' solr.log=/usr/share/solr' >> /usr/share/tomcat7/lib/log4j.properties &&\
     sudo chown -R tomcat7 /usr/share/solr/example/multicore
